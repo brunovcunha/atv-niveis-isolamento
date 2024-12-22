@@ -16,4 +16,6 @@ public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
     Optional<Produto> findByIdWithPessimisticLock(@Param("produtoId") Integer produtoId);
 
     boolean existsByNome(String nome);
+
+    Produto findProdutoByNome(String nome);
 }

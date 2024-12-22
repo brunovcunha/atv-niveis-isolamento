@@ -16,18 +16,18 @@ public class DataConfig {
     public CommandLineRunner dataLoader(ClienteRepository clienteRepository, ProdutoRepository produtoRepository) {
         return args -> {
             // Verificar e inserir cliente 1
-            if (!clienteRepository.existsByNome("João Silva")) {
+            if (!clienteRepository.existsByNome("Joï¿½o Silva")) {
                 Cliente cliente1 = new Cliente();
-                cliente1.setNome("João Silva");
+                cliente1.setNome("Joï¿½o Silva");
                 cliente1.setCargo("Cliente");
                 cliente1.setEndereco("Rua Exemplo, 123");
-                cliente1.setCidade("São Paulo");
+                cliente1.setCidade("Sï¿½o Paulo");
                 cliente1.setCep("01000-000");
                 cliente1.setPais("Brasil");
                 cliente1.setTelefone("(11) 1234-5678");
                 cliente1.setFax("(11) 9876-5432");
                 clienteRepository.save(cliente1);
-                System.out.println("Cliente João Silva inserido com sucesso!");
+                System.out.println("Cliente Joï¿½o Silva inserido com sucesso!");
             }
 
             // Verificar e inserir cliente 2
@@ -50,7 +50,7 @@ public class DataConfig {
                 Cliente cliente3 = new Cliente();
                 cliente3.setNome("Carlos Souza");
                 cliente3.setCargo("Cliente");
-                cliente3.setEndereco("Praça da Liberdade, 789");
+                cliente3.setEndereco("Praï¿½a da Liberdade, 789");
                 cliente3.setCidade("Belo Horizonte");
                 cliente3.setCep("30000-000");
                 cliente3.setPais("Brasil");
@@ -69,6 +69,10 @@ public class DataConfig {
                 produto.setImagem("ps5_imagem_url");
                 produtoRepository.save(produto);
                 System.out.println("Produto PlayStation 5 inserido com sucesso!");
+            } else {
+                Produto produto = produtoRepository.findProdutoByNome("PlayStation 5");
+                produto.setUnidadesEmEstoque(1000);
+                produtoRepository.save(produto);
             }
         };
     }
