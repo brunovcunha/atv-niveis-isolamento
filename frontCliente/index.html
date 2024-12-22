@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Controle de Concorrência</title>
+
+</head>
+<body>
+    <h1>Teste de Locks</h1>
+    <h2>Reinicie o Backend para voltar o estoque!</h2>
+    <div>
+        <h3>Sem Locks</h3>
+        <button onclick="testarSemLocks(100)">100 Requisições</button>
+        <button onclick="testarSemLocks(1000)">1000 Requisições</button>
+        <button onclick="testarSemLocks(10000)">10000 Requisições</button>
+    </div>
+    <div>
+        <h3>Lock Otimista</h3>
+        <button onclick="testarLockOtimista(100)">100 Requisições</button>
+        <button onclick="testarLockOtimista(1000)">1000 Requisições</button>
+        <button onclick="testarLockOtimista(10000)">10000 Requisições</button>
+    </div>
+    <div>
+        <h3>Lock Pessimista</h3>
+        <button onclick="testarLockPessimista(100)">100 Requisições</button>
+        <button onclick="testarLockPessimista(1000)">1000 Requisições</button>
+        <button onclick="testarLockPessimista(10000)">10000 Requisições</button>
+    </div>
+    <div id="logs"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
