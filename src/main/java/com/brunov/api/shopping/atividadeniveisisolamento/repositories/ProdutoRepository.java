@@ -14,4 +14,6 @@ public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT p FROM produtos p WHERE p.id = :produtoId")
     Optional<Produto> findByIdWithPessimisticLock(@Param("produtoId") Integer produtoId);
+
+    boolean existsByNome(String nome);
 }
