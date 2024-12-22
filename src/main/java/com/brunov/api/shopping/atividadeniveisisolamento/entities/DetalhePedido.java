@@ -23,13 +23,13 @@ public class DetalhePedido {
     @JoinColumn(name = "ProdutoID", nullable = false)
     private Produto produto;
 
-    @Column(name = "precoVenda", precision = 10, scale = 2)
+    @Column(name = "precoVenda")
     private Double precoVenda;
 
     @Column(name = "quantidade")
     private Short quantidade;
 
-    @Column(name = "desconto", precision = 10, scale = 2)
+    @Column(name = "desconto")
     private Double desconto;
 
 }

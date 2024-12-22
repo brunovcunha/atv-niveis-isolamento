@@ -20,7 +20,7 @@ public class Produto {
     @Column(name = "ProdutoNome", nullable = false, length = 60)
     private String nome;
 
-    @Column(name = "preco", precision = 10, scale = 2)
+    @Column(name = "preco")
     private Double preco;
 
     @Column(name = "UnidadesEmEstoque")
@@ -31,6 +31,10 @@ public class Produto {
 
     @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
     private List<DetalhePedido> detalhesPedido;
+
+    @Version
+    @Column(name = "versao")
+    private Integer versao;
 
 
 }
